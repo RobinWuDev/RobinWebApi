@@ -1,0 +1,142 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "开放标准接口，基于此API，快速开发，建立自助平台",
+    "version" : "v1",
+    "title" : "肉饼屋Api",
+    "termsOfService" : "http://robinwu.com",
+    "contact" : {
+      "name" : "RobinWu",
+      "email" : "lostskydev@gmail.com"
+    }
+  },
+  "basePath" : "/",
+  "tags" : [ {
+    "name" : "album"
+  } ],
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/album/add" : {
+      "post" : {
+        "tags" : [ "album" ],
+        "summary" : "添加专辑",
+        "description" : "",
+        "operationId" : "add",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "year",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/album/delete" : {
+      "post" : {
+        "tags" : [ "album" ],
+        "summary" : "删除专辑",
+        "description" : "",
+        "operationId" : "add",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/album/list" : {
+      "get" : {
+        "tags" : [ "album" ],
+        "summary" : "获取全部的专辑列表",
+        "description" : "",
+        "operationId" : "list",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/album/update" : {
+      "post" : {
+        "tags" : [ "album" ],
+        "summary" : "更新专辑",
+        "description" : "",
+        "operationId" : "add",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "name",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "year",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "WebResponse" : {
+      "properties" : {
+        "code" : {
+          "type" : "integer",
+          "format" : "int32",
+          "example" : ""
+        },
+        "data" : {
+          "type" : "object",
+          "example" : ""
+        },
+        "message" : {
+          "type" : "string",
+          "example" : ""
+        }
+      }
+    }
+  }
+}
