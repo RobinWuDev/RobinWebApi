@@ -110,7 +110,7 @@ public class IMusicDAOTest {
         int result = domainDAO.create(tempObj);
         assertEquals(result,1);
 
-        result = domainDAO.update(tempObj.getId(),"NewMusic");
+        result = domainDAO.update(tempObj.getId(),"NewMusic",0);
         assertEquals(result,1);
 
         Music newObj = domainDAO.getMusic(tempObj.getId());
@@ -125,7 +125,7 @@ public class IMusicDAOTest {
         int result = domainDAO.create(tempObj);
         assertEquals(result,1);
 
-        result = domainDAO.update(tempObj.getId(),20);
+        result = domainDAO.update(tempObj.getId(),null,20);
         assertEquals(result,1);
 
         Music newObj = domainDAO.getMusic(tempObj.getId());

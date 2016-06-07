@@ -110,7 +110,7 @@ public class IMingYanDAOTest {
         int result = domainDAO.create(tempObj);
         assertEquals(result,1);
 
-        result = domainDAO.updateAuthor(tempObj.getId(),"NewAuthor");
+        result = domainDAO.update(tempObj.getId(),"NewAuthor",null,0);
         assertEquals(result,1);
 
         MingYan newObj = domainDAO.getMingYan(tempObj.getId());
@@ -126,7 +126,7 @@ public class IMingYanDAOTest {
         int result = domainDAO.create(tempObj);
         assertEquals(result,1);
 
-        result = domainDAO.updateContent(tempObj.getId(),"NewContent");
+        result = domainDAO.update(tempObj.getId(),null,"NewContent",0);
         assertEquals(result,1);
 
         MingYan newObj = domainDAO.getMingYan(tempObj.getId());
@@ -142,7 +142,7 @@ public class IMingYanDAOTest {
         int result = domainDAO.create(tempObj);
         assertEquals(result,1);
 
-        result = domainDAO.updateCategory(tempObj.getId(),20);
+        result = domainDAO.update(tempObj.getId(),null,null,20);
         assertEquals(result,1);
 
         MingYan newObj = domainDAO.getMingYan(tempObj.getId());

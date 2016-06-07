@@ -6,11 +6,12 @@ import com.robinwu.api.dao.mapper.AlbumMapper;
 import com.robinwu.api.dao.mapper.MingYanMapper;
 import com.robinwu.api.domain.Album;
 import com.robinwu.api.domain.MingYan;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Robin on 16/5/30.
@@ -67,30 +68,26 @@ public class MingYanDAOImpl implements IMingYanDAO {
     }
 
     public int update(Integer id, String author, String content, Integer categoryId) {
-        String SQL = "update jay_mingyan set author = ?,content = ?,category_id = ? where id = ?";
-        int result = jdbcTemplateObject.update(SQL, author, content, categoryId, id);
+        ArrayList<String> params = new ArrayList<String>();
+        if(author != null) {
+            params.add("author='"+author+"'");
+        }
+
+        if(content != null) {
+            params.add("content='"+content+"'");
+        }
+
+        if(categoryId != 0) {
+            params.add("category_id="+categoryId);
+        }
+
+        if(params.size() == 0) {
+            return 0;
+        }
+        String SQL = "update jay_mingyan set " + StringUtils.join(params,',') + " where id = ?";
+        int result = jdbcTemplateObject.update(SQL,id);
         System.out.println("Updated MingYan Record with ID = " + id + " result = " + result);
         return result;
     }
 
-    public int updateAuthor(Integer id, String author) {
-        String SQL = "update jay_mingyan set author = ? where id = ?";
-        int result = jdbcTemplateObject.update(SQL, author, id);
-        System.out.println("Updated MingYan Record with ID = " + id + " result = " + result);
-        return result;
-    }
-
-    public int updateContent(Integer id, String content) {
-        String SQL = "update jay_mingyan set content = ? where id = ?";
-        int result = jdbcTemplateObject.update(SQL, content, id);
-        System.out.println("Updated MingYan Record with ID = " + id + " result = " + result);
-        return result;
-    }
-
-    public int updateCategory(Integer id, Integer categoryId) {
-        String SQL = "update jay_mingyan set category_id = ? where id = ?";
-        int result = jdbcTemplateObject.update(SQL, categoryId, id);
-        System.out.println("Updated MingYan Record with ID = " + id + " result = " + result);
-        return result;
-    }
 }

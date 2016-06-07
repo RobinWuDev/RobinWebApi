@@ -3,10 +3,12 @@ package com.robinwu.api.dao.impl;
 import com.robinwu.api.dao.IMusicDAO;
 import com.robinwu.api.dao.mapper.MusicMapper;
 import com.robinwu.api.domain.Music;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -61,24 +63,22 @@ public class MusicDAOImpl implements IMusicDAO {
     }
 
     public int update(Integer id, String name, Integer albumId) {
-        String SQL = "update jay_music set name = ?,album_id = ? where id = ?";
-        int result = jdbcTemplateObject.update(SQL, name, albumId , id);
+        ArrayList<String> params = new ArrayList<String>();
+        if(name != null) {
+            params.add("name='"+name+"'");
+        }
+
+        if(albumId != 0) {
+            params.add("album_id="+albumId);
+        }
+
+        if(params.size() == 0) {
+            return 0;
+        }
+        String SQL = "update jay_music set " + StringUtils.join(params,',') + " where id = ?";
+        int result = jdbcTemplateObject.update(SQL,id);
         System.out.println("Updated Music Record with ID = " + id + " name=" + name +
                 " albumId=" + albumId + " result = " + result);
-        return result;
-    }
-
-    public int update(Integer id, String name) {
-        String SQL = "update jay_music set name = ? where id = ?";
-        int result = jdbcTemplateObject.update(SQL, name , id);
-        System.out.println("Updated Music Record with ID = " + id + " name=" + name + " result = " + result);
-        return result;
-    }
-
-    public int update(Integer id, Integer albumId) {
-        String SQL = "update jay_music set album_id = ? where id = ?";
-        int result = jdbcTemplateObject.update(SQL, albumId , id);
-        System.out.println("Updated Music Record with ID = " + id + " albumId=" + albumId + " result = " + result);
         return result;
     }
 }

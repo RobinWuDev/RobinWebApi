@@ -40,6 +40,14 @@ public class AlbumController {
         return WebResponse.getOKResponse(albums);
     }
 
+    @ApiOperation("根据专辑id,获取专辑信息")
+    @RequestMapping(value="getAlbum",method=RequestMethod.GET,produces = "application/json")
+    public  @ResponseBody
+    WebResponse getMusic(@RequestParam(value="albumId") Integer albumId) {
+        Album album = albumDAO.getAlbum(albumId);
+        return WebResponse.getOKResponse(album);
+    }
+
     @ApiOperation("添加专辑")
     @RequestMapping(value="add",method=RequestMethod.POST,produces = "application/json")
     public  @ResponseBody
@@ -56,7 +64,7 @@ public class AlbumController {
     @ApiOperation("删除专辑")
     @RequestMapping(value="delete",method=RequestMethod.POST,produces = "application/json")
     public  @ResponseBody
-    WebResponse add(@RequestParam(value = "id") int id) {
+    WebResponse delete(@RequestParam(value = "id") int id) {
         int result = albumDAO.delete(id);
         if(result != 0) {
             return WebResponse.getOKResponse("Remove Album Finish");
@@ -68,7 +76,7 @@ public class AlbumController {
     @ApiOperation("更新专辑")
     @RequestMapping(value="update",method=RequestMethod.POST,produces = "application/json")
     public  @ResponseBody
-    WebResponse add(@RequestParam(value = "id") int id,
+    WebResponse update(@RequestParam(value = "id") int id,
                     @RequestParam(value = "name") String name,
                     @RequestParam(value = "year") String year) {
         int result = albumDAO.update(id,name,year);

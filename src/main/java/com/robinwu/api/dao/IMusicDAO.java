@@ -22,8 +22,4 @@ public interface IMusicDAO {
     public int delete(Integer id);
 
     public int update(Integer id, String name, Integer albumId);
-
-    public int update(Integer id, String name);
-
-    public int update(Integer id, Integer albumId);
 }

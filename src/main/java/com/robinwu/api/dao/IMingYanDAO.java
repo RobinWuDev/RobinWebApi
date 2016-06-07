@@ -23,9 +23,4 @@ public interface IMingYanDAO {
 
     public int update(Integer id, String author, String content,Integer categoryId);
 
-    public int updateAuthor(Integer id, String author);
-
-    public int updateContent(Integer id, String content);
-
-    public int updateCategory(Integer id, Integer categoryId);
 }

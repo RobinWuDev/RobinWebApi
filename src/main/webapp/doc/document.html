@@ -127,7 +127,7 @@
 ### POST
 
 
-<a id="add">删除专辑</a>
+<a id="delete">删除专辑</a>
 
 
 
@@ -181,6 +181,83 @@
 | 状态码       |    结果      | 返回类型
 |-------------|-------------|----------------|
 | 200    | successful operation | <a href="#/definitions/WebResponse">WebResponse</a>|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /album/getAlbum
+
+
+### GET
+
+<a id="getMusic">根据专辑id,获取专辑信息</a>
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>名称</th>
+        <th>位置</th>
+        <th>是否必填</th>
+        <th>描述</th>
+        <th>默认值</th>
+        <th>类型</th>
+    </tr>
+
+
+
+<tr>
+    <th>albumId</th>
+    <td>query</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>integer (int32)</td>
+    
+
+</tr>
+
+
+</table>
+
+
+
+#### Response
+
+**Content-Type: ** application/json
+
+
+| 状态码       |    结果      | 返回类型
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/WebResponse">WebResponse</a>|
+
+
+
 
 
 
@@ -258,7 +335,7 @@
 ### POST
 
 
-<a id="add">更新专辑</a>
+<a id="update">更新专辑</a>
 
 
 
@@ -321,6 +398,1271 @@
 
     
             <td>string </td>
+    
+
+</tr>
+
+
+</table>
+
+
+
+#### Response
+
+**Content-Type: ** application/json
+
+
+| 状态码       |    结果      | 返回类型
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/WebResponse">WebResponse</a>|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /mingyan/add
+
+
+
+
+
+
+### POST
+
+
+<a id="add">添加名言</a>
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>名称</th>
+        <th>位置</th>
+        <th>是否必填</th>
+        <th>描述</th>
+        <th>默认值</th>
+        <th>类型</th>
+    </tr>
+
+
+
+<tr>
+    <th>author</th>
+    <td>query</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+<tr>
+    <th>content</th>
+    <td>query</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+<tr>
+    <th>categoryId</th>
+    <td>query</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>integer (int32)</td>
+    
+
+</tr>
+
+
+</table>
+
+
+
+#### Response
+
+**Content-Type: ** application/json
+
+
+| 状态码       |    结果      | 返回类型
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/WebResponse">WebResponse</a>|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /mingyan/delete
+
+
+
+
+
+
+### POST
+
+
+<a id="delete">删除名言</a>
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>名称</th>
+        <th>位置</th>
+        <th>是否必填</th>
+        <th>描述</th>
+        <th>默认值</th>
+        <th>类型</th>
+    </tr>
+
+
+
+<tr>
+    <th>id</th>
+    <td>query</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>integer (int32)</td>
+    
+
+</tr>
+
+
+</table>
+
+
+
+#### Response
+
+**Content-Type: ** application/json
+
+
+| 状态码       |    结果      | 返回类型
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/WebResponse">WebResponse</a>|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /mingyan/getMingYan
+
+
+### GET
+
+<a id="getMingYan">根据名言id,获取名言信息</a>
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>名称</th>
+        <th>位置</th>
+        <th>是否必填</th>
+        <th>描述</th>
+        <th>默认值</th>
+        <th>类型</th>
+    </tr>
+
+
+
+<tr>
+    <th>id</th>
+    <td>query</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>integer (int32)</td>
+    
+
+</tr>
+
+
+</table>
+
+
+
+#### Response
+
+**Content-Type: ** application/json
+
+
+| 状态码       |    结果      | 返回类型
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/WebResponse">WebResponse</a>|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /mingyan/list
+
+
+### GET
+
+<a id="list">根据类别id,获取名言列表</a>
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>名称</th>
+        <th>位置</th>
+        <th>是否必填</th>
+        <th>描述</th>
+        <th>默认值</th>
+        <th>类型</th>
+    </tr>
+
+
+
+<tr>
+    <th>categoryId</th>
+    <td>query</td>
+    <td>no</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>integer (int32)</td>
+    
+
+</tr>
+
+
+</table>
+
+
+
+#### Response
+
+**Content-Type: ** application/json
+
+
+| 状态码       |    结果      | 返回类型
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/WebResponse">WebResponse</a>|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /mingyan/update
+
+
+
+
+
+
+### POST
+
+
+<a id="update">更新名言</a>
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>名称</th>
+        <th>位置</th>
+        <th>是否必填</th>
+        <th>描述</th>
+        <th>默认值</th>
+        <th>类型</th>
+    </tr>
+
+
+
+<tr>
+    <th>id</th>
+    <td>query</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>integer (int32)</td>
+    
+
+</tr>
+
+<tr>
+    <th>author</th>
+    <td>query</td>
+    <td>no</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+<tr>
+    <th>content</th>
+    <td>query</td>
+    <td>no</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+<tr>
+    <th>categoryId</th>
+    <td>query</td>
+    <td>no</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>integer (int32)</td>
+    
+
+</tr>
+
+
+</table>
+
+
+
+#### Response
+
+**Content-Type: ** application/json
+
+
+| 状态码       |    结果      | 返回类型
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/WebResponse">WebResponse</a>|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /mingyancategory/add
+
+
+
+
+
+
+### POST
+
+
+<a id="add">添加名言类别</a>
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>名称</th>
+        <th>位置</th>
+        <th>是否必填</th>
+        <th>描述</th>
+        <th>默认值</th>
+        <th>类型</th>
+    </tr>
+
+
+
+<tr>
+    <th>name</th>
+    <td>query</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+
+</table>
+
+
+
+#### Response
+
+**Content-Type: ** application/json
+
+
+| 状态码       |    结果      | 返回类型
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/WebResponse">WebResponse</a>|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /mingyancategory/delete
+
+
+
+
+
+
+### POST
+
+
+<a id="delete">删除名言类别</a>
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>名称</th>
+        <th>位置</th>
+        <th>是否必填</th>
+        <th>描述</th>
+        <th>默认值</th>
+        <th>类型</th>
+    </tr>
+
+
+
+<tr>
+    <th>id</th>
+    <td>query</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>integer (int32)</td>
+    
+
+</tr>
+
+
+</table>
+
+
+
+#### Response
+
+**Content-Type: ** application/json
+
+
+| 状态码       |    结果      | 返回类型
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/WebResponse">WebResponse</a>|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /mingyancategory/getCategory
+
+
+### GET
+
+<a id="getMingYanCategory">根据名言类别id,获取名言类别信息</a>
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>名称</th>
+        <th>位置</th>
+        <th>是否必填</th>
+        <th>描述</th>
+        <th>默认值</th>
+        <th>类型</th>
+    </tr>
+
+
+
+<tr>
+    <th>id</th>
+    <td>query</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>integer (int32)</td>
+    
+
+</tr>
+
+
+</table>
+
+
+
+#### Response
+
+**Content-Type: ** application/json
+
+
+| 状态码       |    结果      | 返回类型
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/WebResponse">WebResponse</a>|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /mingyancategory/list
+
+
+### GET
+
+<a id="list">获取全部的名言类别列表</a>
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+
+
+
+
+
+#### Response
+
+**Content-Type: ** application/json
+
+
+| 状态码       |    结果      | 返回类型
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/WebResponse">WebResponse</a>|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /mingyancategory/update
+
+
+
+
+
+
+### POST
+
+
+<a id="update">更新名言类别</a>
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>名称</th>
+        <th>位置</th>
+        <th>是否必填</th>
+        <th>描述</th>
+        <th>默认值</th>
+        <th>类型</th>
+    </tr>
+
+
+
+<tr>
+    <th>id</th>
+    <td>query</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>integer (int32)</td>
+    
+
+</tr>
+
+<tr>
+    <th>name</th>
+    <td>query</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+
+</table>
+
+
+
+#### Response
+
+**Content-Type: ** application/json
+
+
+| 状态码       |    结果      | 返回类型
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/WebResponse">WebResponse</a>|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /music/add
+
+
+
+
+
+
+### POST
+
+
+<a id="add">添加音乐</a>
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>名称</th>
+        <th>位置</th>
+        <th>是否必填</th>
+        <th>描述</th>
+        <th>默认值</th>
+        <th>类型</th>
+    </tr>
+
+
+
+<tr>
+    <th>name</th>
+    <td>query</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+<tr>
+    <th>albumId</th>
+    <td>query</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>integer (int32)</td>
+    
+
+</tr>
+
+
+</table>
+
+
+
+#### Response
+
+**Content-Type: ** application/json
+
+
+| 状态码       |    结果      | 返回类型
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/WebResponse">WebResponse</a>|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /music/delete
+
+
+
+
+
+
+### POST
+
+
+<a id="delete">删除音乐</a>
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>名称</th>
+        <th>位置</th>
+        <th>是否必填</th>
+        <th>描述</th>
+        <th>默认值</th>
+        <th>类型</th>
+    </tr>
+
+
+
+<tr>
+    <th>id</th>
+    <td>query</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>integer (int32)</td>
+    
+
+</tr>
+
+
+</table>
+
+
+
+#### Response
+
+**Content-Type: ** application/json
+
+
+| 状态码       |    结果      | 返回类型
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/WebResponse">WebResponse</a>|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /music/getMusic
+
+
+### GET
+
+<a id="getMusic">根据音乐id,获取音乐信息</a>
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>名称</th>
+        <th>位置</th>
+        <th>是否必填</th>
+        <th>描述</th>
+        <th>默认值</th>
+        <th>类型</th>
+    </tr>
+
+
+
+<tr>
+    <th>id</th>
+    <td>query</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>integer (int32)</td>
+    
+
+</tr>
+
+
+</table>
+
+
+
+#### Response
+
+**Content-Type: ** application/json
+
+
+| 状态码       |    结果      | 返回类型
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/WebResponse">WebResponse</a>|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /music/list
+
+
+### GET
+
+<a id="list">根据专辑id,获取音乐列表</a>
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>名称</th>
+        <th>位置</th>
+        <th>是否必填</th>
+        <th>描述</th>
+        <th>默认值</th>
+        <th>类型</th>
+    </tr>
+
+
+
+<tr>
+    <th>albumId</th>
+    <td>query</td>
+    <td>no</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>integer (int32)</td>
+    
+
+</tr>
+
+
+</table>
+
+
+
+#### Response
+
+**Content-Type: ** application/json
+
+
+| 状态码       |    结果      | 返回类型
+|-------------|-------------|----------------|
+| 200    | successful operation | <a href="#/definitions/WebResponse">WebResponse</a>|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## /music/update
+
+
+
+
+
+
+### POST
+
+
+<a id="update">更新音乐</a>
+
+
+
+
+
+
+
+
+
+#### Request
+
+
+
+##### Parameters
+
+<table border="1">
+    <tr>
+        <th>名称</th>
+        <th>位置</th>
+        <th>是否必填</th>
+        <th>描述</th>
+        <th>默认值</th>
+        <th>类型</th>
+    </tr>
+
+
+
+<tr>
+    <th>id</th>
+    <td>query</td>
+    <td>yes</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>integer (int32)</td>
+    
+
+</tr>
+
+<tr>
+    <th>name</th>
+    <td>query</td>
+    <td>no</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>string </td>
+    
+
+</tr>
+
+<tr>
+    <th>albumId</th>
+    <td>query</td>
+    <td>no</td>
+    <td></td>
+    <td> - </td>
+
+    
+            <td>integer (int32)</td>
     
 
 </tr>

@@ -17,9 +17,7 @@
 
     <context-param>
         <param-name>spring.profiles.active</param-name>
-        <param-value>test</param-value>
+        <param-value>product</param-value>
     </context-param>
-
-
 
 </web-app>

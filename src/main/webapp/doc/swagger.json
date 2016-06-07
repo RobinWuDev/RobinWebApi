@@ -12,6 +12,12 @@
   },
   "basePath" : "/",
   "tags" : [ {
+    "name" : "mingyan"
+  }, {
+    "name" : "mingyancategory"
+  }, {
+    "name" : "music"
+  }, {
     "name" : "album"
   } ],
   "schemes" : [ "http" ],
@@ -49,10 +55,34 @@
         "tags" : [ "album" ],
         "summary" : "删除专辑",
         "description" : "",
-        "operationId" : "add",
+        "operationId" : "delete",
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "id",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/album/getAlbum" : {
+      "get" : {
+        "tags" : [ "album" ],
+        "summary" : "根据专辑id,获取专辑信息",
+        "description" : "",
+        "operationId" : "getMusic",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "albumId",
           "in" : "query",
           "required" : true,
           "type" : "integer",
@@ -90,7 +120,7 @@
         "tags" : [ "album" ],
         "summary" : "更新专辑",
         "description" : "",
-        "operationId" : "add",
+        "operationId" : "update",
         "produces" : [ "application/json" ],
         "parameters" : [ {
           "name" : "id",
@@ -108,6 +138,405 @@
           "in" : "query",
           "required" : true,
           "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/mingyan/add" : {
+      "post" : {
+        "tags" : [ "mingyan" ],
+        "summary" : "添加名言",
+        "description" : "",
+        "operationId" : "add",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "author",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "content",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "categoryId",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/mingyan/delete" : {
+      "post" : {
+        "tags" : [ "mingyan" ],
+        "summary" : "删除名言",
+        "description" : "",
+        "operationId" : "delete",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/mingyan/getMingYan" : {
+      "get" : {
+        "tags" : [ "mingyan" ],
+        "summary" : "根据名言id,获取名言信息",
+        "description" : "",
+        "operationId" : "getMingYan",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/mingyan/list" : {
+      "get" : {
+        "tags" : [ "mingyan" ],
+        "summary" : "根据类别id,获取名言列表",
+        "description" : "",
+        "operationId" : "list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "categoryId",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/mingyan/update" : {
+      "post" : {
+        "tags" : [ "mingyan" ],
+        "summary" : "更新名言",
+        "description" : "",
+        "operationId" : "update",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "author",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "content",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "categoryId",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/mingyancategory/add" : {
+      "post" : {
+        "tags" : [ "mingyancategory" ],
+        "summary" : "添加名言类别",
+        "description" : "",
+        "operationId" : "add",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/mingyancategory/delete" : {
+      "post" : {
+        "tags" : [ "mingyancategory" ],
+        "summary" : "删除名言类别",
+        "description" : "",
+        "operationId" : "delete",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/mingyancategory/getCategory" : {
+      "get" : {
+        "tags" : [ "mingyancategory" ],
+        "summary" : "根据名言类别id,获取名言类别信息",
+        "description" : "",
+        "operationId" : "getMingYanCategory",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/mingyancategory/list" : {
+      "get" : {
+        "tags" : [ "mingyancategory" ],
+        "summary" : "获取全部的名言类别列表",
+        "description" : "",
+        "operationId" : "list",
+        "produces" : [ "application/json" ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/mingyancategory/update" : {
+      "post" : {
+        "tags" : [ "mingyancategory" ],
+        "summary" : "更新名言类别",
+        "description" : "",
+        "operationId" : "update",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "name",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/music/add" : {
+      "post" : {
+        "tags" : [ "music" ],
+        "summary" : "添加音乐",
+        "description" : "",
+        "operationId" : "add",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "query",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "albumId",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/music/delete" : {
+      "post" : {
+        "tags" : [ "music" ],
+        "summary" : "删除音乐",
+        "description" : "",
+        "operationId" : "delete",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/music/getMusic" : {
+      "get" : {
+        "tags" : [ "music" ],
+        "summary" : "根据音乐id,获取音乐信息",
+        "description" : "",
+        "operationId" : "getMusic",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/music/list" : {
+      "get" : {
+        "tags" : [ "music" ],
+        "summary" : "根据专辑id,获取音乐列表",
+        "description" : "",
+        "operationId" : "list",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "albumId",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "schema" : {
+              "$ref" : "#/definitions/WebResponse"
+            }
+          }
+        }
+      }
+    },
+    "/music/update" : {
+      "post" : {
+        "tags" : [ "music" ],
+        "summary" : "更新音乐",
+        "description" : "",
+        "operationId" : "update",
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "format" : "int32"
+        }, {
+          "name" : "name",
+          "in" : "query",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "albumId",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "format" : "int32"
         } ],
         "responses" : {
           "200" : {
